@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <style>
@@ -29,42 +29,40 @@
 <body>
 <h1>Calcular Promedio</h1>
 
-<form>
+<form th:action="@{/calcularpromedio}" method="post" th:object="${promediomodel}">
   <div class="mb-3">
     <label for="n1" class="form-label">Nota 1</label>
-    <input type="number" class="form-control" id="n1" aria-describedby="emailHelp">
+    <input type="number" th:field="*{nota1}" class="form-control" id="n1" aria-describedby="emailHelp">
   </div>
   <br>
 
   <div class="mb-3">
     <label for="n2" class="form-label">Nota 2</label>
-    <input type="number" class="form-control" id="n2">
+    <input type="number" th:field="*{nota2}" class="form-control" id="n2">
   </div>
   <br>
 
   <div class="mb-3">
     <label for="n3" class="form-label">Nota 3</label>
-    <input type="number" class="form-control" id="n3" aria-describedby="emailHelp">
+    <input type="number" th:field="*{nota3}" class="form-control" id="n3" aria-describedby="emailHelp">
   </div>
   <br>
 
   <div class="mb-3">
     <label for="e4" class="form-label">Examen Final</label>
-    <input type="number" class="form-control" id="e4" aria-describedby="emailHelp">
+    <input type="number" th:field="*{nota4}" class="form-control" id="e4" aria-describedby="emailHelp">
     <br>
   </div>
   <br>
 
-  <div class="mb-3">
-    <label for="promediofinal" class="form-label">Promedio</label>
-    <input type="number" class="form-control" id="promediofinal" aria-describedby="emailHelp">
-  </div>
+
   <br>
 
   <button type="submit" class="btn btn-primary">CALCULAR</button>
 </form>
 <br>
-<div class="alert alert-danger" role="alert">
+<div th:if="${visualizaralerta}" class="alert alert-danger" th:classappend="${estilodiagnostico}" role="alert">
+  <span th:text="${resultado} ?:''"></span>
 </div>
 </body>
 </html>

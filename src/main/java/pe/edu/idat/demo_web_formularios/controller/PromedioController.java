@@ -9,14 +9,14 @@ import pe.edu.idat.demo_web_formularios.model.PromedioModel;
 
 @Controller
 public class PromedioController {
-    @GetMapping ("/notas")
+    @GetMapping ("/promedio")
     public String formularioNotas(Model model){
         model.addAttribute("promediomodel", new PromedioModel());
         model.addAttribute("visualizaralerta", false);
         return "promedio";
     }
 
-    @PostMapping
+    @PostMapping("/calcularpromedio")
     public String calcularPromedio(@ModelAttribute("promediomodel") PromedioModel promedido, Model model){
         double n1 = promedido.getNota1();
         double n2 = promedido.getNota2();
