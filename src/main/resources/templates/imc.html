@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Masa Corporal</title>
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" >
+</head>
+<body>
+
+
+
+<div class="card">
+    <div class="card-header">
+        CALCULADORA IMC
+    </div>
+    <div class="card-body">
+        <!-- th:action (se usa el @)resuelve una ruta definida por el controlador -->
+            <!-- th:object(@)= mapea un objeto de enviado desde el controlador. $objeto que viaja de la vista al controlador y viseversa, debe estar definida en el controlador,-->
+        <form th:action="@{/calcularimc}" method="post" th:object="${imcmodel}">
+
+            <div class="mb-3">
+                <label for="txttalla" class="form-label">Ingrese su Talla:</label>
+                <input type="number" th:field="*{talla}" class="form-control" id="txttalla" placeholder="Ingrese Talla">
+            </div>
+            <div class="mb-3">
+                <label for="txtpeso" class="form-label">Ingrese su Peso:</label>
+                <input type="number" th:field="*{peso}" class="form-control" id="txtpeso" placeholder="Ingrese Peso">
+            </div>
+            <button type="submit" class="btn btn-info">Calcular</button>
+
+        </form>
+        <div th:if="${visualizaralerta}" class="alert" th:classappend="${estilodiagnostico}" role="alert">
+            <span th:text="${resultado} ?:''"></span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
