@@ -8,6 +8,7 @@ public class PromedioController {
     @GetMapping ("/notas")
     public String formularioNotas(){
         return "promedio";
+
     }
 
 }

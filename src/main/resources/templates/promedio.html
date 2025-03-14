@@ -1,25 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Promedio</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Alinea los elementos al principio */
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f8ff;
+        margin: 0;
+    }
+
+    h1 {
+        text-align: center; /* Centra el título */
+        margin-top: 20px; /* Añade un poco de espacio en la parte superior */
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  </style>
 </head>
+<title>Promedio</title>
 <body>
+<h1>Calcular Promedio</h1>
+
 <form>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="n1" class="form-label">Nota 1</label>
+    <input type="number" class="form-control" id="n1" aria-describedby="emailHelp">
   </div>
+  <br>
+
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="n2" class="form-label">Nota 2</label>
+    <input type="number" class="form-control" id="n2">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <br>
+
+  <div class="mb-3">
+    <label for="n3" class="form-label">Nota 3</label>
+    <input type="number" class="form-control" id="n3" aria-describedby="emailHelp">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+
+  <div class="mb-3">
+    <label for="e4" class="form-label">Examen Final</label>
+    <input type="number" class="form-control" id="e4" aria-describedby="emailHelp">
+    <br>
+  </div>
+  <br>
+
+  <div class="mb-3">
+    <label for="promediofinal" class="form-label">Promedio</label>
+    <input type="number" class="form-control" id="promediofinal" aria-describedby="emailHelp">
+  </div>
+  <br>
+
+  <button type="submit" class="btn btn-primary">CALCULAR</button>
 </form>
+<br>
+<div class="alert alert-danger" role="alert">
+</div>
 </body>
 </html>
